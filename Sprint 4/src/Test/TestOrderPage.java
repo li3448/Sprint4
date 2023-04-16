@@ -60,7 +60,7 @@ public class TestOrderPage {
     @Test
     public void testUpOrderButton ()  {
         MainPage objMainPage = new MainPage(driver);
-        driver.findElement(By.xpath(orderButtonLocator)).click();
+        driver.findElement(By.xpath(orderUpButton)).click();
         FirstOrderPage firstOrderPage = new FirstOrderPage(driver);
         firstOrderPage.fillFirstPage(firstName, secondName, streetName, metroStation,phoneNumber);
         firstOrderPage.setNextButton();
@@ -74,7 +74,7 @@ public class TestOrderPage {
 
      public void testDownOrderButton ()  {
         MainPage objMainPage = new MainPage(driver);
-        driver.findElement(By.xpath(orderButtonLocator)).click();
+        driver.findElement(By.xpath(orderDownButton)).click();
         FirstOrderPage firstOrderPage = new FirstOrderPage(driver);
         firstOrderPage.fillFirstPage(firstName, secondName, streetName, metroStation,phoneNumber);
         firstOrderPage.setNextButton();
