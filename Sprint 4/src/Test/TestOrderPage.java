@@ -72,6 +72,19 @@ public class TestOrderPage {
         MatcherAssert.assertThat(orderText, containsString("Заказ оформлен"));
     }
 
+     public void testDownOrderButton ()  {
+        MainPage objMainPage = new MainPage(driver);
+        driver.findElement(By.xpath(orderButtonLocator)).click();
+        FirstOrderPage firstOrderPage = new FirstOrderPage(driver);
+        firstOrderPage.fillFirstPage(firstName, secondName, streetName, metroStation,phoneNumber);
+        firstOrderPage.setNextButton();
+        SecondOrderPage secondOrderPage = new SecondOrderPage(driver);
+        secondOrderPage.fillSecondPage(dataFields,commentField);
+        secondOrderPage.clicOrderBook();
+        secondOrderPage.setOrderConfirmation();
+        String orderText = secondOrderPage.getOrderSocsessText();
+        MatcherAssert.assertThat(orderText, containsString("Заказ оформлен"));
+    
     @After
     public void quit() {
         driver.quit();
