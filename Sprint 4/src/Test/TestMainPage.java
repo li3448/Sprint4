@@ -59,7 +59,6 @@ public class TestMainPage  {
         objMainPage.scrollToMainQwestion();
 
         driver.findElement(By.xpath(accordionLocator)).click();
-        Thread.sleep(500);
         String answerText = objMainPage.getOpenAnswerText();
         Assert.assertEquals("Текст различается",result, answerText );
     }
